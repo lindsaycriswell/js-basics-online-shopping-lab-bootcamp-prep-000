@@ -17,33 +17,27 @@ function addToCart(item){
   return cart;
 }
 
-function viewCart(){
-  if(cart.length === 0){
-    console.log('Your shopping cart is empty.');
-  }
+function viewCart() {
+  var statement = "In your cart, you have";
+  var phrases = [];
+
+    for(var i = 0; i < cart.length; i++){
+      var item = Object.keys(cart[i]);
+      var price = cartObject[item];
+      var combo = `${item} at $${price}`
+      phrases.push(combo);
+      }
+        if (cart.length === 0) {
+          console.log("Your shopping cart is empty.");
+        } else if (cart.length === 1) {
+          console.log(`${statement} ${phrases[0]}.`);
+        } else if (cart.length === 2) {
+          console.log(`${statement} ${phrases[0]} and ${phrases[1]}.`);
+        } else {
+          var lastItem = phrases.pop();
+          console.log(`${statement} ${phrases.join(', ')}, and ${lastItem}.`);
+        }
 }
-// function viewCart() {
-//   var statement = "In your cart, you have";
-//   var phrases = [];
-//
-//     for(var i = 0; i < cart.length; i++){
-//       var cartObject = cart[i];
-//       var cartItem = Object.keys(cartObject);
-//       var price = cartObject[cartItem];
-//       var combo = `${cartItem} at $${price}`
-//       phrases.push(combo);
-//       }
-//         if (cart.length === 0) {
-//           console.log("Your shopping cart is empty.");
-//         } else if (cart.length === 1) {
-//           console.log(`${statement} ${phrases[0]}.`);
-//         } else if (cart.length === 2) {
-//           console.log(`${statement} ${phrases[0]} and ${phrases[1]}.`);
-//         } else {
-//           var lastItem = phrases.pop();
-//           console.log(`${statement} ${phrases.join(', ')}, and ${lastItem}.`);
-//         }
-// }
 //
 // function total() {
 //   var total = 0;
