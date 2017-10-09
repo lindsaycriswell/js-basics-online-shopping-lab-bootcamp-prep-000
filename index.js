@@ -40,24 +40,16 @@ function viewCart() {
         }
 }
 
+
 function total() {
-  var totalCost = 0
-  for(let i = 0; i < cart.length; i++) {
-    var cartObject = cart [i];
+  var total = 0;
+  for(var i = 0; i < cart.length; i++){
+    var cartObject = cart[i];
     var cartItem = Object.keys(cartObject);
     total += cartObject[cartItem];
   }
   return total;
 }
-// function total() {
-//   var total = 0;
-//   for(var i = 0; i < cart.length; i++){
-//     var cartObject = cart[i];
-//     var cartItem = Object.keys(cartObject);
-//     total += cartObject[cartItem];
-//   }
-//   return total;
-// }
 //
 // function removeFromCart(item) {
 //   for(var i = 0; i < cart.length; i++){
