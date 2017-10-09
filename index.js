@@ -9,7 +9,7 @@ function setCart(c) {
   return cart;
 }
 
-function addToCart(item){
+function addToCart(item) {
   var price = Math.floor(Math.random() * 100);
   var itemAndPrice = { [item]: price};
   cart.push(itemAndPrice);
@@ -39,7 +39,15 @@ function viewCart() {
           console.log(`${statement} ${phrases.join(', ')}, and ${lastItem}.`);
         }
 }
-//
+
+function total() {
+  var totalCost = 0
+  for(let i = 0; i < cart.length; i++) {
+    var cartObject = cart [i];
+    var cartItem = Object.keys(cartObject);
+    total += cartObject[cartItem];
+  }
+}
 // function total() {
 //   var total = 0;
 //   for(var i = 0; i < cart.length; i++){
