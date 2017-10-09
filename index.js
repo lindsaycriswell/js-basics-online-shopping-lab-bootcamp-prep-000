@@ -22,9 +22,10 @@ function viewCart() {
   var phrases = [];
 
     for(var i = 0; i < cart.length; i++){
-      var item = Object.keys(cart[i]);
-      var price = cartObject[item];
-      var combo = `${item} at $${price}`
+      var cartObject = cart[i];
+      var cartItem = Object.keys(cart[i]);
+      var price = cartObject[cartItem];
+      var combo = `${cartItem} at $${price}`
       phrases.push(combo);
       }
         if (cart.length === 0) {
