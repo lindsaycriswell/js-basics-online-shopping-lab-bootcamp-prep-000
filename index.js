@@ -47,6 +47,7 @@ function total() {
     var cartItem = Object.keys(cartObject);
     total += cartObject[cartItem];
   }
+  return total;
 }
 // function total() {
 //   var total = 0;
